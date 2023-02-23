@@ -12,6 +12,13 @@ function crearClasePersona() {
 
       // Tu código aca:
 
+        this.nombre = nombre;
+        this.edad = edad;
+        this.hobbies = hobbies; 
+        this.amigos = amigos; 
+
+
+
     }
 
     addFriend(nombre, edad) {
@@ -21,6 +28,10 @@ function crearClasePersona() {
 
       // Tu código aca:
 
+        let nuevoAmigo = {nombre: nombre, edad: edad}
+
+        this.amigos.push (nuevoAmigo); 
+
     }
 
     addHobby(hobby) {
@@ -28,6 +39,8 @@ function crearClasePersona() {
       // No debe retornar nada.
 
       // Tu código aca:
+
+      this.hobbies.push (hobby); 
 
     }
     getFriends() {
@@ -39,6 +52,11 @@ function crearClasePersona() {
 
       // Tu código aca:
 
+        return this.amigos.map ((elemento) => {
+
+            return elemento.nombre; 
+        })
+
     }
 
     getHobbies() {
@@ -47,6 +65,15 @@ function crearClasePersona() {
       // persona.getHobbies() debe devolver ['correr', 'dormir', 'nadar']
 
       // Tu código aca:
+
+      let newHobbies = []
+
+      for (let i = 0; i < this.hobbies.length; i++) {
+
+          newHobbies.push (this.hobbies [i]); 
+      }
+
+      return newHobbies; 
 
     }
 
@@ -67,6 +94,16 @@ function crearClasePersona() {
 
       // Tu código aca:
 
+        let arrayEdades = []; 
+
+        for (let i = 0; i < this.amigos.length; i++) {
+
+            arrayEdades.push (this.amigos [i].edad); 
+        }
+
+        let sumaEdades = arrayEdades.reduce ((a,b) => a+b)
+
+        return sumaEdades / this.amigos.length;
     }
   };
 

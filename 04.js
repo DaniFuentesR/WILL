@@ -14,7 +14,25 @@ function numeroSimetrico(num) {
 
   // Tu código:
 
+let numString = num.toString (); 
+
+let  longitud = numString.length; 
+
+for (let i = 0; i < Math.floor (longitud / 2); i++) {
+
+    if (numString [i] !== numString [longitud -1 - i ]){
+
+      return false 
+  
+    }
+
+} return true; 
+
+    
 }
+
+console.log (numeroSimetrico (11711)); 
+
 
 // No modifiques nada debajo de esta linea //
 
